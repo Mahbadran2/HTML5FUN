@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="C:\Users\badran\Desktop\workspace\CSS\bootstrap.min.css" rel="stylesheet" >
+ <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+<style>  <!--CSS-->
+/* basics */
+
+input:required{
+border:2px solid blue
+}
+input:invalid {
+	border: 1px solid red;
+}
+
+input:valid {
+	border: 1px solid green;
+}
+span:data-content{
+
+
+}
+</style>
+
+</head>
+<body >
+
+<div class="container-fluid" >
+  
+  <form class="form-horizontal" role="form" >
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="validation-messages">
+        <span data-rule="valueMissing"  class="hide" >asdasd</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <div class="col-sm-4">          
+        <input type="email" class="form-control" data-rule-required="true" id="pwd" placeholder="Enter password" required>
+      </div>
+	  </div>
+	 <div class="validation-messages" class="form-group"> 
+     <span data-spacing="10cm"  //FIRST RULE
+     class="hide">The username is required. </span>
+     </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div align="center" >
+<video controls width="40%" height="40%" id="video">
+<source src="C:\Users\badran\Desktop\workspace\Assassin_s_Creed_3_E3_Official_Trailer.mp4"  />
+</video>
+<div >
+<button type="button" class="btn btn-primary" id="videoButton" >Play</button>
+</div>
+<div>
+<canvas id="myCanvas"> <!--myCanvas-->
+
+</canvas>
+</div>
+
+</div>
+
+<script type="text/javascript">
+var video = document.getElementById("video"); 
+var playButton = $('#videoButton');
+var MyCan = document.getElementById('myCanvass');
+
+playButton.click(function(){
+if(video.paused){
+video.play();
+playButton.text('Pause');
+
+}
+else 
+{
+video.pause();
+playButton.text('Play');
+}
+});
+var c = myCanvas.getContext('2d');
+ c.beginPath();
+    c.moveTo(100,100);
+    c.lineTo(100,300);
+    c.lineTo(150,300);
+	c.lineTo(150,155);
+	c.lineTo(205,155);
+	c.lineTo(205,100);
+  
+	c.fillStyle('#0099ff');
+	c.fill();
+	c.lineWidth=6;
+	c.lineJoin='round';
+	c.strokeStyle='#cccccc';
+	c.stroke();
+
+</script>
+
+
+</body>
+
+</html>
+
+
+
+
+

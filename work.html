@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>Serch</title>
+
+</head>
+
+<body>
+
+<canvas id="myCanvas"> <!--myCanvas-->
+
+</canvas>
+
+<canvas id="Rect"></canvas>
+<script type="text/javascript">
+var MyCan = document.getElementById('myCanvass');
+var c = myCanvas.getContext('2d');
+var myRect = document.getElementById('Rect');
+var Rect = myRect.getContext('2d');
+ c.beginPath();
+    c.moveTo(50,50);
+    c.lineTo(50,250);
+    c.lineTo(100,250);
+	c.lineTo(100,105);
+	c.lineTo(155,105);
+	c.lineTo(155,50);
+  c.closePath();
+c.fillStyle="#0099ff";
+	c.fill();
+	c.lineWidth=6;
+	c.lineJoin='round';
+	c.strokeStyle='#cccccc';
+	c.stroke();
+	
+	Rect.fillStyle = 'rgb(500,0,0)';
+	Rect.fillRect(
+	50,
+	50,
+	100,
+	100);
+    Rect.fillStyle = 'rgba(0,0,500,0.5)';
+	Rect.fillRect(
+	80,
+	80,
+	100,
+	100);
+	Rect.clearRect(
+	115,
+	115,
+	20,
+	20
+	);
+</script>
+
+</body>
+
+</html>
