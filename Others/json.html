@@ -12,6 +12,10 @@
 			background:red;
 			color:black;
 		}
+		.chaneColor{
+			background : red;
+		}
+		
 		
 	</style>
 	<head>
@@ -30,16 +34,40 @@
 				});
 				$('#cldbl').click(function(){
 						$(this).toggleClass("dbl");
-						});
+				});
+				$('span').append("<p>appended</p>");
+				
+				$('<img>',
+					{
+						src : "./imagesa.jpg",
+						title : "Assassin'creed image",
+						click: function() {
+						alert($(this).attr('title'));
+					}
+					}
+				).appendTo('#image');
+				$('#myH').on('mouseenter mouseleave mouseup',function(event){
+					$(this).css({
+						"cursor" : "pointer"
+					});
+					
+					$(this).toggleClass("chaneColor");
+					if (event.type == "mouseup"){
+						$(this).text("X:" + " " + event.pageX + " " + "Y:" + " " + event.pageY );
+					}
+				
+				});
 			});
 		</script>
 	</head>
 	
 	<body>
-
+	
+	<span id="appenda"></span>
 	<p id="dblclick"> te </p>
 	<div class="container">
-  <h2>Form control: input</h2>
+  <h2 id="myH">Form control: input</h2>
+  
   <p>The form below contains two input elements; one of type text and one of type password:</p>
   <form >
     <div  class="form-group">
@@ -55,6 +83,7 @@
 	</div>
   </form>
   <div id="cldbl" class="asd"></div>
+  <span id="image" title="assassins" value="i1"></span>
 </div>
 
 		<h1>Try</h1>
