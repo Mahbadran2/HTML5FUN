@@ -57,7 +57,7 @@ span:data-content{
 
 <div align="center" >
 <video controls width="40%" height="40%" id="video">
-<source src="C:\Users\mahmoud\Desktop\workspace\HTML5FUN\Zootopia.mp4"  />
+<source src="C:\Users\badran\Desktop\HTML5FUN\Zootopia.mp4"  />
 </video>
 <div >
 <button type="button" class="btn btn-primary" id="videoButton" >Play</button>
@@ -71,22 +71,25 @@ span:data-content{
 </div>
 
 <script type="text/javascript">
-var video = document.getElementById("video"); 
-var playButton = $('#videoButton');
-var MyCan = document.getElementById('myCanvass');
+$(document).ready(function(){
+alert("jquery");
 
-playButton.click(function(){
-if(video.paused){
-video.play();
-playButton.text('Pause');
+var vid =  $("#video");
+var vidbutton = $('#videoButton');
 
-}
-else 
-{
-video.pause();
-playButton.text('Play');
-}
+vidbutton.on('click', function(){
+	if(vid.get(0).paused)
+		{
+			vid.get(0).play(0);
+			vidbutton.text("pause");
+		}else{
+			vid.get(0).pause();
+			vidbutton.text("play");
+		}
+	});
+
 });
+
 var c = myCanvas.getContext('2d');
  c.beginPath();
     c.moveTo(100,100);
